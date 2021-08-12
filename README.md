@@ -1,11 +1,11 @@
 
 ## Stock Embeddings Acquired from News Articles and Price History, andan Application to Portfolio Optimization
- 论文复现 [《Stock Embeddings Acquired from News Articles and Price History, andan Application to Portfolio Optimization》](https://aclanthology.org/2020.acl-main.307/)
- ---
+论文复现 [《Stock Embeddings Acquired from News Articles and Price History, andan Application to Portfolio Optimization》](https://aclanthology.org/2020.acl-main.307/)
+ 
 ## 运行环境
 
 Python 3.8 & Pytorch 1.9.0
----
+
 ## 数据描述
 
 + #### 新闻文本数据<br>
@@ -15,8 +15,9 @@ Python 3.8 & Pytorch 1.9.0
 
 选择了20只标普500的成分股作为实验对象，选择方法为在新闻文本中股票代码被提及1000次及以上的股票，股票价格数据来自于[英为财情](https://cn.investing.com/)，存放至data/stock price下<br><br>
 对每只股票逐日计算对数收益率，并设置阈值，认为在（−0.0059,0.0068）间的股票涨跌情况是模糊的，将之剔除，因此，通过仅使用明显的负面和正面天数，回报被二值化<br><br>
+以APPLE为例，在新闻覆盖时间内，共经历了1784个交易日，其中包含上涨656天、下跌592天、模糊536天，合计涨幅为652.13%
 
----
+
 ## 代码文件
 * ### corpus_gen.py：包含了语料库生成及词向量训练过程，需在文本特征蒸馏前完成运行并保存结果
 * ### text_feature_distiller.py ：提取文本特征，生成N_k(64维)及N_v(256维)
@@ -29,7 +30,7 @@ Python 3.8 & Pytorch 1.9.0
 * ### shared_classifier.py 共享分类器机制的实现
 * ### run.py 单一股票的模型训练全过程
 
----
+
 ## 待完善
 * ~~双向量表示~~
 * ~~加权平均市场向量~~
