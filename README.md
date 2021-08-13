@@ -13,7 +13,7 @@ Python 3.8 & Pytorch 1.9.0
 由于版权原因，本项目中未包含完整数据集，运行项目首先需下载[数据集](https://drive.google.com/drive/folders/0B3C8GEFwm08QY3AySmE2Z1daaUE?resourcekey=0-pbrVOqwKjQj3wRoCU8LiCA)并解压至项目文件夹data下
 + #### 股票价格数据<br>
 
-选择了20只标普500的成分股作为实验对象，选择方法为在新闻文本中股票代码被提及1000次及以上的股票，股票价格数据来自于[英为财情](https://cn.investing.com/)，存放至data/stock price下<br><br>
+选择了20只标普500的成分股作为实验对象，筛选条件为在新闻文本中股票代码被提及1000次及以上的股票，股票价格数据来自于[英为财情](https://cn.investing.com/)，存放至data/stock price下<br><br>
 对每只股票逐日计算对数收益率，并设置阈值，认为在（−0.0059,0.0068）间的股票涨跌情况是模糊的，将之剔除，因此，通过仅使用明显的负面和正面天数，回报被二值化<br><br>
 以APPLE为例，在新闻覆盖时间内，共经历了1784个交易日，其中包含上涨656天、下跌592天、模糊536天，合计涨幅为652.13%
 
